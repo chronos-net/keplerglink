@@ -1,0 +1,134 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: flex-end;
+  background: rgba(15, 23, 42, 0.42);
+  backdrop-filter: blur(3px);
+}
+
+.sheet {
+  width: min(760px, 96vw);
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #e5e7eb;
+  background: #fff;
+  box-shadow: -28px 0 56px rgba(15, 23, 42, 0.22);
+  animation: slideIn 180ms ease-out;
+}
+
+.body {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  overflow: auto;
+  padding: 24px 28px 32px;
+}
+
+.recordsSection {
+  display: grid;
+  gap: 18px;
+  min-height: auto;
+  overflow: visible;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.sectionHeader p {
+  margin: 0;
+  color: #05070d;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.sectionHeader span {
+  color: #98a2b3;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.recordList {
+  display: grid;
+  gap: 18px;
+  max-height: none !important;
+  overflow: visible !important;
+  align-content: start;
+  padding: 0 !important;
+  margin: 0;
+  list-style: none;
+  scrollbar-gutter: stable;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 760px) {
+  .sheet {
+    width: 100vw;
+  }
+
+  .body {
+    gap: 18px;
+    padding: 18px 16px 28px;
+  }
+
+  .recordList {
+    max-height: none;
+    overflow: visible;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionHeader {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+.body,
+.recordList {
+  scrollbar-color: #83827f #eef2f7;
+}
+
+.body::-webkit-scrollbar,
+.recordList::-webkit-scrollbar {
+  width: 10px;
+}
+
+.body::-webkit-scrollbar-track,
+.recordList::-webkit-scrollbar-track {
+  background: #eef2f7;
+  border-radius: 999px;
+}
+
+.body::-webkit-scrollbar-thumb,
+.recordList::-webkit-scrollbar-thumb {
+  border: 2px solid #eef2f7;
+  border-radius: 999px;
+  background: #9ca3af;
+}
+
+.body::-webkit-scrollbar-thumb:hover,
+.recordList::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}

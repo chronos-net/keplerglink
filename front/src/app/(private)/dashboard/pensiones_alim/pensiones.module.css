@@ -1,0 +1,22 @@
+.page {
+  display: grid;
+  gap: 5px;
+  padding: 16px;
+}
+
+.title {
+  composes: h1 from global;
+}
+
+
+.filterRow {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

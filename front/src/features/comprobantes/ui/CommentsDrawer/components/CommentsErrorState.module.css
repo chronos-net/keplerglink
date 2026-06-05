@@ -1,0 +1,15 @@
+.error {
+  display: grid;
+  gap: 6px;
+  border: 1px solid #fecaca;
+  border-radius: 5px;
+  background: #fff1f2;
+  color: #991b1b;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+  padding: 16px;
+}
+
+.error span {
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}

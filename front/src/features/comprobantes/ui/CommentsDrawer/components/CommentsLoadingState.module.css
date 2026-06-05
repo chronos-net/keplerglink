@@ -1,0 +1,42 @@
+.state {
+  border: 1px solid #e5e7eb;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+  padding: 16px;
+}
+
+.skelTitle,
+.skelRow,
+.skelCard {
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #eef2f7 0%, #e2e8f0 40%, #eef2f7 80%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s infinite;
+}
+
+.skelTitle {
+  width: 56%;
+  height: 22px;
+}
+
+.skelRow {
+  width: 86%;
+  height: 14px;
+}
+
+.skelCard {
+  width: 100%;
+  height: 110px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}

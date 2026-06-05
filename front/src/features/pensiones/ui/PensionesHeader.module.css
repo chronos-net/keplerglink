@@ -1,0 +1,44 @@
+.wrap{
+  background:#fff;
+  border:1px solid #eceef3;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(15, 23, 42, 0.06);
+  padding:18px 20px;
+}
+
+.left{
+  display:flex;
+  gap:20px;
+  align-items:center;
+}
+
+.block{
+  display:grid;
+  gap:8px;
+}
+
+.name{
+  margin:0;
+  font-size:20px;
+  font-weight:700;
+  line-height:1.2;
+  color:#0f172a;
+}
+
+.meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:22px;
+  color:#374151;
+  font-size:12px;
+  align-items:center;
+}
+
+.item b{
+  color:#111827;
+  font-weight:700;
+}
+
+.dot{
+  opacity:.45;
+}

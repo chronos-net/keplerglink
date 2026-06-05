@@ -1,0 +1,292 @@
+.page {
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f4f4f4;
+    padding: 24px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.container {
+    width: min(100%, 1280px);
+    height: min(84vh, 760px);
+    margin: 0 auto;
+    display: flex;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+    background: #fff;
+}
+
+/* PANEL IZQUIERDO */
+
+.leftPanel {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    background: linear-gradient(135deg, #7a1230 0%, #8f1737 45%, #9c1c3d 100%);
+}
+
+.leftPanel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(135deg, rgba(122, 18, 48, 0.75), rgba(156, 28, 61, 0.65)),
+        url("/img/fondo.png") center/cover no-repeat;
+}
+
+.leftPanel::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(0, 0, 0, .1));
+}
+
+.leftContent {
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    bottom: 24px;
+    color: #fff;
+    max-width: 520px;
+    z-index: 1;
+}
+
+/* PANEL DERECHO */
+
+.rightPanel {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.rightScroll {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* FORMULARIO */
+
+.formWrap {
+    width: 100%;
+    max-width: 720px;
+    padding: 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logoBox {
+    text-align: right;
+    margin-bottom: 2.5rem;
+}
+
+.title {
+    font-size: 1rem;
+    font-weight: 900;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    font-size: .9rem;
+    color: #6e6e6e;
+}
+
+.footerText {
+    text-align: center;
+    width: 100%;
+}
+
+/* TABLET / ESCRITORIO REDUCIDO */
+/* mismo ancho visual para evitar el salto */
+
+@media (max-width: 1024px) {
+    .page {
+        padding: 20px;
+    }
+
+    .container {
+        flex-direction: column;
+        width: min(calc(100% - 40px), 760px);
+        height: calc(100dvh - 40px);
+        border-radius: 18px;
+    }
+
+    .leftPanel {
+        flex: 0 0 210px;
+        align-items: flex-start;
+    }
+
+    .leftContent {
+        top: 18px;
+        bottom: auto;
+        left: 22px;
+        right: 22px;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .leftContent h1,
+    .leftContent h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        line-height: 1.05;
+    }
+
+    .leftContent p {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .formWrap {
+        max-width: 560px;
+        padding: 1.75rem 2rem;
+    }
+
+    .logoBox {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* MOBILE */
+/* se mantiene el mismo ancho visual que en el breakpoint anterior */
+
+@media (max-width: 768px) {
+    .page {
+        padding: 20px;
+    }
+
+    .container {
+        flex-direction: column;
+        width: min(calc(100% - 40px), 760px);
+        height: calc(100dvh - 40px);
+        border-radius: 18px;
+    }
+
+    .leftPanel {
+        flex: 0 0 210px;
+        align-items: flex-start;
+    }
+
+    .leftContent {
+        top: 18px;
+        bottom: auto;
+        left: 22px;
+        right: 22px;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .leftContent h1,
+    .leftContent h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        line-height: 1.05;
+    }
+
+    .leftContent p {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .formWrap {
+        max-width: 560px;
+        padding: 1.75rem 2rem;
+    }
+
+    .logoBox {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .title {
+        font-size: 0.95rem;
+    }
+
+    .subtitle {
+        font-size: 0.85rem;
+    }
+}
+
+/* MOBILE SMALL */
+/* aquí sí cambia porque ya es teléfono pequeño real */
+
+@media (max-width: 480px) {
+    .page {
+        padding: 10px;
+    }
+
+    .container {
+        width: calc(100% - 20px);
+        height: calc(100dvh - 20px);
+        border-radius: 16px;
+    }
+
+    .leftPanel {
+        flex: 0 0 132px;
+        align-items: flex-start;
+    }
+
+    .leftContent {
+        top: 10px;
+        left: 12px;
+        right: 12px;
+        bottom: auto;
+        text-align: center;
+    }
+
+    .leftContent h1,
+    .leftContent h2 {
+        font-size: 0.9rem;
+        margin-bottom: 4px;
+        line-height: 1.05;
+    }
+
+    .leftContent p {
+        font-size: 0.64rem;
+        line-height: 1.15;
+        text-align: center;
+    }
+
+    .rightPanel,
+    .rightScroll {
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .formWrap {
+        padding: 0.55rem 0.75rem 0.15rem;
+        justify-content: flex-start;
+    }
+
+    .logoBox {
+        display: none;
+    }
+
+    .title {
+        font-size: 0.82rem;
+        margin-bottom: 2px;
+    }
+
+    .subtitle {
+        font-size: 0.72rem;
+        line-height: 1.15;
+        margin-bottom: 0.5rem;
+    }
+
+    .footerText {
+        text-align: center;
+        font-size: 0.68rem;
+        margin-top: 0.3rem;
+    }
+}

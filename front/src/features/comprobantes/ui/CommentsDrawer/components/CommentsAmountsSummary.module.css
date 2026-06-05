@@ -1,0 +1,58 @@
+.section {
+  display: grid;
+  gap: 14px;
+}
+
+.sectionHeader p {
+  margin: 0;
+  color: #05070d;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.kpiRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 26px;
+}
+
+.kpi {
+  min-width: 0;
+  min-height: 64px;
+  border: 1px solid #e3e7ee;
+  border-radius: 8px;
+  background: #fbfcfe;
+  padding: 10px 14px;
+}
+
+.kpi span {
+  display: block;
+  margin-bottom: 8px;
+  color: #a8b0be;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.kpi strong {
+  display: block;
+  color: #05070d;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+.mutedMoney {
+  color: #05070d !important;
+}
+
+.negativeMoney {
+  color: var(--brand) !important;
+}
+
+@media (max-width: 760px) {
+  .kpiRow {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}

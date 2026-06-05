@@ -1,0 +1,87 @@
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 28px;
+  border-bottom: 1px solid var(--border-soft, #f0f0f3);
+  background: var(--card-bg, #fff);
+}
+
+.cardTitleGroup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+
+.cardIcon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: var(--brand, #9f2141);
+  box-shadow: 0 12px 24px rgba(159, 33, 65, 0.16);
+  flex: 0 0 auto;
+}
+
+.titleIcon {
+  color: #fff;
+}
+
+.title {
+  margin: 0;
+  color: var(--fg, #0f172a);
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.subtitle {
+  margin: 6px 0 0;
+  color: var(--dim, #6b7280);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.clearButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  border: 1px solid var(--border, #e7e7ec);
+  border-radius: 12px;
+  background: #fff;
+  color: #8b6b79;
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 0 16px;
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease,
+    color 160ms ease,
+    opacity 160ms ease;
+}
+
+.clearButton:hover:not(:disabled) {
+  background: var(--brand, #9f2141);
+  border-color: var(--brand, #9f2141);
+  color: #fff;
+}
+
+.clearButton:disabled {
+  opacity: 0.48;
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .cardHeader {
+    padding-left: 16px;
+    padding-right: 16px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

@@ -1,0 +1,136 @@
+.wrap {
+  margin-top: 14px;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid #e7e7ec;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  padding: 14px;
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.tabsRow {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0 14px;
+  flex-wrap: wrap;
+}
+
+.searchRow {
+  margin: 6px 0 12px;
+}
+
+.table {
+  border: 1px solid #eef0f4;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.tHead {
+  display: grid;
+  grid-template-columns: 140px 160px 140px 1fr 160px;
+  gap: 12px;
+  padding: 12px;
+  background: #f8fafc;
+}
+
+.tRow {
+  display: grid;
+  grid-template-columns: 140px 160px 140px 1fr 160px;
+  gap: 12px;
+  padding: 12px;
+  border-top: 1px solid #eef0f4;
+}
+
+/* ===== skeleton blocks ===== */
+.hTitle,
+.hPill,
+.tab,
+.search,
+.th,
+.td,
+.tdWide,
+.tdBadge,
+.tdBtn {
+  border-radius: 999px;
+  background: linear-gradient(90deg, #eef2f7 0%, #f5f7fb 40%, #eef2f7 80%);
+  background-size: 200% 100%;
+  animation: shimmer 1.1s infinite;
+}
+
+.hTitle {
+  height: 18px;
+  width: 180px;
+  border-radius: 10px;
+}
+
+.hPill {
+  height: 22px;
+  width: 140px;
+}
+
+.tab {
+  height: 28px;
+  width: 110px;
+}
+
+.search {
+  height: 38px;
+  width: 320px;
+  border-radius: 12px;
+}
+
+.th {
+  height: 12px;
+  width: 70%;
+  border-radius: 8px;
+}
+
+.td {
+  height: 14px;
+  width: 65%;
+  border-radius: 8px;
+}
+
+.tdWide {
+  height: 14px;
+  width: 85%;
+  border-radius: 8px;
+}
+
+.tdBadge {
+  height: 22px;
+  width: 90px;
+}
+
+.tdBtn {
+  height: 34px;
+  width: 120px;
+  border-radius: 10px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: -200% 0%;
+  }
+}
+
+@media (max-width: 900px) {
+  .tHead,
+  .tRow {
+    grid-template-columns: 120px 140px 120px 1fr 120px;
+  }
+
+  .search {
+    width: 100%;
+  }
+}

@@ -1,0 +1,10 @@
+.wrap {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border, #e7e7ec);
+  border-radius: 18px;
+  background: var(--card-bg, #fff);
+  box-shadow: var(--shadow, 0 10px 30px rgba(16, 24, 40, 0.06));
+}

@@ -1,0 +1,274 @@
+/* ================== recibo-header.module.css (COMPLETO) ================== */
+/* lienzo gris */
+.canvas{
+  background: var(--bg-canvas);
+  padding: 3px;
+  border-radius: var(--radius);
+}
+
+/* tarjeta principal */
+.card{
+  background: var(--card-bg);
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px;
+  display:grid;
+  gap: 10px;
+  position: relative;
+}
+
+/* ================= CABECERA EN 3 COLUMNAS ================= */
+.headerGrid{
+  display: grid;
+  /* persona | datos | categoría */
+  grid-template-columns: 1.2fr 1.6fr 1.2fr;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 6px;
+}
+.headerGrid::after{
+  content:'';
+  display:block;
+  grid-column: 1 / -1;
+  height:1px;
+  background: var(--border);
+  margin-top: 6px;
+}
+
+/* columnas + divisores verticales */
+.personCol{ padding-right:16px; }
+.laborCol{
+  padding: 0 16px;
+  border-left: 1px solid var(--divider);
+  border-right: 1px solid var(--divider);
+}
+.catCol{ padding-left:16px; border-left: 1px solid var(--divider); }
+
+/* ================= PERSONA ================= */
+.personRow{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+.personMeta{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  line-height:1.2;
+}
+
+.personName{
+  font-weight:700;
+  font-size:14px;
+  color:var(--fg);
+}
+
+.personIds{
+  color:var(--dim);
+  font-size:12px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap: wrap;
+}
+
+.dot{
+  width:4px;
+  height:4px;
+  border-radius:50%;
+  background: var(--border);
+}
+
+/* ================= DATOS LABORALES ================= */
+.sectionTitle{
+  font-size:12px; font-weight:700; color:var(--dim);
+  margin: 0 0 6px;
+}
+
+.laborGrid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 24px;
+}
+
+.block{
+  display:grid;
+  grid-auto-rows: min-content;
+  row-gap: 2px;
+}
+
+.label{
+  font-size:11px;
+  color:var(--dim);
+}
+
+.mono{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+  font-size:13px;
+  color:var(--fg);
+}
+
+/* ================= CATEGORÍA / ADSCRIPCIÓN ================= */
+/* === Mejor disposición para los botones === */
+
+/* contenedor de iconos */
+.catRow{
+  display: grid;
+  grid-template-columns: minmax(150px,1fr) minmax(180px,1fr) auto;
+  align-items: end;
+  gap: 14px;
+}
+
+.catBox{
+  min-width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;   /* 👈 antes flex-end */
+}
+
+.actionButtons{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.msgBtn{
+  position: relative;
+  height: 30px;
+  width: 30px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--dim);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.msgBtn:hover{ background:#fafafa; }
+
+.pill{
+  border:1px solid var(--border);
+  background:#fafafa;
+  border-radius:8px;
+  padding:8px 10px;
+  font-size:12px;
+  color:var(--fg);
+  min-height:34px;
+  display:flex;
+  align-items:center;
+}
+
+/* ================= TOTALES ================= */
+.totalsBar{
+  border-top:1px solid var(--border);
+  display:grid;
+  grid-template-columns: repeat(5, auto);
+  justify-content: space-between;
+  align-items:center;
+  gap:24px;
+  padding-top:10px;
+  margin-top: 6px;
+}
+
+.totalItem{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  white-space: nowrap;
+}
+
+.totalLabel{
+  font-size:12px;
+  color:var(--dim);
+}
+
+.totalValue{
+  font-size:14px;
+  font-weight:700;
+  color:var(--fg);
+}
+
+.success .totalValue{
+  color: var(--success);
+}
+
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1100px){
+  .headerGrid{
+    grid-template-columns: 1fr 1.4fr 1.1fr;
+    gap: 12px;
+  }
+
+  .totalsBar{
+    grid-template-columns: repeat(3, 1fr);
+    gap:16px;
+  }
+
+  .totalItem{
+    flex-direction:column;
+    align-items:flex-start;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 860px){
+  .laborCol,
+  .catCol{ border: none; padding-left:0; padding-right:0; }
+  .personCol{ padding-right:0; }
+}
+
+@media (max-width: 720px){
+  .headerGrid{
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .laborGrid{ grid-template-columns: 1fr 1fr; }
+  .catRow{ grid-template-columns: 1fr 1fr auto; }
+  .totalsBar{ grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 520px){
+  .catRow{ grid-template-columns: 1fr; }
+  .msgBtn{ justify-self:end; }
+  .laborGrid{ grid-template-columns: 1fr; }
+  .totalsBar{ grid-template-columns: 1fr; }
+}
+/* …tus reglas previas… */
+
+/* grid de 3 columnas (persona | laborales | categoría) */
+.headerGrid{
+  display:grid;
+  grid-template-columns: 1.1fr 1.2fr 1fr;
+  gap: 16px;
+}
+
+.msgBtn{
+  position:relative;
+  height:30px;
+  width:30px;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--border);
+  border-radius:8px;
+  background:#fff;
+  color:var(--dim);
+  cursor:pointer;
+}
+
+.msgBtn:hover{ background:#fafafa; }
+
+.badge{
+  position:absolute;
+  right:4px;
+  top:4px;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#cbd5e1;
+}
+.hasComments .badge{ background:#16a34a; }  /* verde */
+.noComments .badge{ background:#cbd5e1; } /* gris */

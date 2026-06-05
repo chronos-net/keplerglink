@@ -1,0 +1,152 @@
+/* src/app/globals.css */
+:root {
+  /* base */
+  --brand: #9f2141;
+  --text: #0a0a0a;
+  --muted: #6b6b6b;
+  --bg: #f4f4f4;
+  --radius: 16px;
+
+  /* layout privado */
+  --bg-cream: #eef1f4;
+  --surface: #ffffff;
+  --gap: 10px;
+
+  /* sidebar */
+  --panel-bg: #ffffff;
+  --ink: #1d1f23;
+  --brand-weak: #f9e7ec;
+  --brand-ring: #f2c9d4;
+
+  --danger: #e5484d;
+  --danger-weak: #fee4e2;
+  --danger-ring: #f9c6c4;
+
+  --ring: #e7ecf7;
+  --shadow: 0 10px 30px rgba(16, 24, 40, 0.06);
+
+  --rb-bg: #f5f5f7;
+  --rb-card: #fff;
+  --rb-border: #e7e7ec;
+  --rb-fg: #0f172a;
+  --rb-dim: #6b7280;
+  --rb-accent: #6e0f4f;
+  --rb-radius: 12px;
+
+  --rb-bg: #f5f6f8;
+  --rb-fg: #0f172a;
+  --rb-dim: #6b7280;
+  --rb-border: #e7e7ec;
+
+  --rb-row: #fff;
+  --rb-row-alt: #fafbfc;
+  --rb-hover: #f2f5fb;
+  --rb-shadow: 0 6px 16px rgba(16, 24, 40, 0.06);
+  --rb-success: #128a41;
+  --rb-danger: #c0392b;
+
+  --rb-bg: #fff;
+  --rb-fg: #0f172a;
+  --rb-dim: #6b7280;
+  --rb-border: #e7e7ec;
+  --rb-accent: #9f2141;
+  --rb-ink: #fff;
+  --rb-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  --rb-radius: 14px;
+
+  --bg-canvas: #f5f6f8; /* gris del fondo */
+  --card-bg: #fff;
+  --border: #e7e7ec;
+  --border-soft: #f0f0f3;
+  --border-header: #eceef3
+  --fg: #0f172a;
+  --dim: #6b7280;
+  --accent: #9f2141; /* tokens propios si los tienes */
+  --success: #128a41;
+  --radius: 12px;
+  --divider: var(--border-soft);
+
+  --sk-bg: color-mix(in oklab, #ffffff 86%, #000 14%);
+  --sk-stroke: color-mix(in oklab, #000 12%, #fff 88%);
+  --sk-shimmer: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.791),
+    transparent
+  );
+  --sk-radius: 12px;
+  --sk-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+  --tab-active-todos-bg: var(--accent);
+  --tab-active-todos-border: var(--accent);
+  --tab-active-todos-fg: #ffffff;
+  --tab-active-todos-shadow: 0 8px 20px rgba(159, 33, 65, 0.18);
+
+  --tab-active-entrega-bg: linear-gradient(135deg, #9a6b1f 0%, #b9852f 100%);
+  --tab-active-entrega-border: #caa56a;
+  --tab-active-entrega-fg: #ffffff;
+  --tab-active-entrega-shadow: 0 8px 20px rgba(154, 107, 31, 0.18);
+
+  --gold-fill: #fff2d5;
+  --gold-border: #b88c26;
+  --gold-text: #9a7420;
+  --gold-shadow: rgba(184, 140, 38, 0.14);
+}
+
+:root.dark {
+  --panel-bg: #0f1217;
+  --ink: #f1f5f9;
+  --ring: #222a36;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  background: var(--bg);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root{
+  --h1-size:32px;
+  --h1-weight: 700;
+  --h1-line: 1.2;
+  --h1-margin: 6px 0 9px;
+}
+
+.h1{
+  margin: var(--h1-margin);
+  font-size: var(--h1-size);
+  font-weight: var(--h1-weight);
+  line-height: var(--h1-line);
+}
+
+:root{
+  --avatar-bg: #000000;   
+  --avatar-color: #ffffff; 
+}
+
+.avatar{
+  width: 34px;
+  min-width: 34px;
+  height: 34px;
+  min-height: 34px;
+  border-radius: 50%;
+  background: var(--avatar-bg);
+  color: var(--avatar-color);
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  line-height: 1;
+  flex-shrink: 0;
+}

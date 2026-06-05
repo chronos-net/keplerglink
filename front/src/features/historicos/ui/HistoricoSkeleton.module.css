@@ -1,0 +1,188 @@
+/* src/features/historicos/ui/HistoricoSkeleton.module.css */
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.headerCard,
+.tableCard {
+  border: 1px solid #e6eaf0;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+}
+
+.headerCard {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 18px;
+  padding: 22px;
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+}
+
+.main {
+  min-width: 0;
+}
+
+.name {
+  width: 280px;
+  max-width: 100%;
+  height: 22px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+}
+
+.metaItem {
+  width: 150px;
+  height: 14px;
+  border-radius: 8px;
+}
+
+.totalBox {
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.totalLabel {
+  width: 180px;
+  height: 14px;
+  border-radius: 8px;
+}
+
+.totalValue {
+  width: 140px;
+  height: 22px;
+  border-radius: 8px;
+}
+
+.tableCard {
+  padding: 20px;
+}
+
+.tableTitle {
+  width: 170px;
+  height: 20px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.tableScroll {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  min-width: 980px;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #edf1f6;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.thLg,
+.cellLg {
+  width: 130px;
+  height: 14px;
+  border-radius: 8px;
+}
+
+.thMd,
+.cellMd {
+  width: 100px;
+  height: 14px;
+  border-radius: 8px;
+}
+
+.thSm,
+.cellSm {
+  width: 70px;
+  height: 14px;
+  border-radius: 8px;
+}
+
+.thXs,
+.cellXs {
+  width: 44px;
+  height: 14px;
+  border-radius: 8px;
+}
+
+.thMoney,
+.cellMoney {
+  width: 110px;
+  height: 14px;
+  border-radius: 8px;
+}
+
+.shimmer {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, #eef2f7 25%, #f7f9fc 50%, #eef2f7 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@media (max-width: 920px) {
+  .headerCard {
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+  }
+
+  .totalBox {
+    min-width: 0;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .headerCard,
+  .tableCard {
+    border-radius: 20px;
+    padding: 16px;
+  }
+
+  .name {
+    width: 220px;
+    height: 20px;
+  }
+
+  .metaItem {
+    width: 120px;
+  }
+
+  .tableTitle {
+    width: 150px;
+  }
+}

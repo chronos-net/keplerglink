@@ -1,0 +1,313 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.card {
+  overflow: hidden;
+  border: 1px solid #e7e5e4;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid #efebe7;
+  background: #ffffff;
+}
+
+.cardIcon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  color: #6b7280;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.cardTitle {
+  margin: 0;
+  color: #1f2937;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.cardSubtitle {
+  margin: 6px 0 0;
+  color: #7c7c7c;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 22px 24px 20px;
+  background: #ffffff;
+}
+
+.profileMain {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+
+.name {
+  margin: 0;
+  color: #1f2937;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.headerChips {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.metaChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.metaBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.metaChip,
+.metaBarItem {
+  display: inline-flex;
+  align-items: center;
+  height: 44px;
+  padding: 0 16px;
+  border: 1px solid #ece7e2;
+  border-radius: 14px;
+  background: #faf8f6;
+  color: #6b7280;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.metaBarItem {
+  gap: 8px;
+}
+
+.metaBarItem svg {
+  width: 14px;
+  height: 14px;
+  color: #6b7280;
+  flex-shrink: 0;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  background: #ffffff;
+}
+
+.infoItem {
+  min-height: 80px;
+  padding: 16px 24px 14px;
+  border-top: 1px solid #efebe7;
+  box-sizing: border-box;
+}
+
+.infoItem:nth-child(odd) {
+  border-right: 1px solid #efebe7;
+}
+
+.infoLabel {
+  margin-bottom: 10px;
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.infoValue {
+  color: #334155;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.45;
+  word-break: break-word;
+}
+
+.salaryBlock {
+  padding: 18px 24px 16px;
+  border-top: 1px solid #efebe7;
+  background: #ffffff;
+}
+
+.salaryLabel {
+  margin-bottom: 10px;
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.salaryValue {
+  color: #0f172a;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.tramitesList {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+}
+
+.tramiteRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 18px 22px;
+  border-top: 1px solid #efebe7;
+  background: #ffffff;
+}
+
+.tramiteRowActive {
+  background: #f8fafc;
+}
+
+.tramiteLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.tramiteDot {
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #cbd5e1;
+  border-radius: 999px;
+  color: transparent;
+  font-size: 11px;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.tramiteDotActive {
+  border-color: #64748b;
+  background: #64748b;
+  color: #ffffff;
+}
+
+.tramiteLabel {
+  color: #1f2937;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.tramiteBadge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 999px;
+  background: #f1f5f9;
+  color: #334155;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.noteBox {
+  min-height: 84px;
+  padding: 18px 20px;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 760px) {
+  .profile {
+    align-items: flex-start;
+    padding: 18px 16px;
+  }
+
+  .profileMain {
+    gap: 8px;
+  }
+
+  .name {
+    font-size: 16px;
+  }
+
+  .headerChips {
+    gap: 8px;
+  }
+
+  .metaChips,
+  .metaBar {
+    gap: 8px;
+  }
+
+  .metaChip,
+  .metaBarItem {
+    height: 40px;
+    font-size: 12px;
+    padding: 0 12px;
+  }
+
+  .infoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .infoItem {
+    min-height: auto;
+    padding: 16px;
+  }
+
+  .infoItem:nth-child(odd) {
+    border-right: none;
+  }
+
+  .salaryBlock {
+    padding: 16px;
+  }
+
+  .salaryValue {
+    font-size: 22px;
+  }
+
+  .tramiteRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tramiteBadge {
+    margin-left: 30px;
+  }
+}

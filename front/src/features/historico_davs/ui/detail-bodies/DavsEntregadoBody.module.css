@@ -1,0 +1,330 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* CARD BASE */
+.card {
+  overflow: hidden;
+  border: 1px solid #e7e5e4;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+}
+
+/* PERFIL */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 22px 24px 20px;
+}
+
+.profileContent {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+  min-width: 0;
+}
+
+.profileMain {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+
+.name {
+  margin: 0;
+  color: #1f2937;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  text-transform: none;
+}
+
+.metaChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.metaChip{
+  padding: 7px 14px;
+  border-radius: 12px;
+  background: #faf8f6;
+  border: 1px solid #ece7e2;
+  color: #6b7280;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1;
+}
+
+/* FOLIO / FECHA / HORA */
+.metaBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.metaBarItem{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 14px;
+  border:1px solid #ece7e2;
+  border-radius:14px;
+  background:#faf8f6;
+  color:#6b7280;
+  font-weight:600;
+  font-size:13px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.metaBarItem svg{
+  width:14px;
+  height:14px;
+  color:#7c7c7c;
+  flex-shrink: 0;
+}
+
+
+/* HEADER DE TARJETA */
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 20px 24px 14px;
+  border-bottom: 1px solid #efebe7;
+  background: #ffffff;
+}
+
+/* BLOQUE IZQUIERDO DEL HEADER */
+.cardHeader > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+/* SLOT PARA ICONO */
+.cardIcon {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f7f3f5;
+  border: 1px solid #ece3e8;
+  color: #606060;
+  flex-shrink: 0;
+}
+
+/* CONTENEDOR DE TITULO + SUBTITULO */
+.cardHeading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  min-height: 38px;
+}
+
+.cardTitle {
+  margin: 0;
+  color: #1f2937;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.cardSubtitle {
+  margin: 6px 0 0;
+  color: #7c7c7c;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+/* RESUMEN DE MONTOS */
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  padding: 18px 24px 24px;
+}
+
+.summaryItem {
+  padding: 18px 18px 16px;
+  border: 1px solid #ece7e2;
+  border-radius: 16px;
+  background: #faf8f6;
+  min-height: 104px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.summaryItem + .summaryItem {
+  border-left: 1px solid #ece7e2;
+}
+
+.summaryLabel {
+  margin-bottom: 10px;
+  color: #a8a29e;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: none;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+}
+
+.summaryValue{
+  color:#000000;
+  font-weight:800;
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+/* TARJETA DESTACADA */
+.summaryItemHighlight {
+  background: #faf8f6;
+  border-color: #ece7e2;
+}
+
+.summaryItemHighlight .summaryLabel {
+  color: #a8a29e;
+}
+
+.summaryItemHighlight .summaryValue {
+  color: #111827;
+}
+
+/* MENSAJE */
+.messageBlock {
+  padding: 18px 24px 24px;
+}
+
+.blockLabel {
+  margin-bottom: 10px;
+  color: #a8a29e;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: none;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+}
+
+.messageText {
+  padding: 18px 20px;
+  border: 1px solid #ece7e2;
+  border-radius: 16px;
+  background: #faf8f6;
+  color: #4b5563;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+/* OPCIONAL: NOTA SUAVE INFERIOR SI LUEGO LA AGREGAS */
+.footerNote {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 24px 18px;
+  color: #b4aab2;
+  font-size: 13px;
+}
+
+.footerNote svg {
+  width: 14px;
+  height: 14px;
+  color: #9d4b65;
+}
+
+@media (max-width: 760px) {
+  .profile {
+    align-items: flex-start;
+    padding: 18px 16px 14px;
+  }
+
+  .avatar {
+    width: 52px;
+    height: 52px;
+    font-size: 18px;
+  }
+
+  .name {
+    font-size: 16px;
+  }
+
+    .metaBar {
+    margin: 4px 0 0;
+    gap: 10px;
+  }
+
+  .metaBarItem{
+    padding: 9px 12px;
+    font-size: 12px;
+  }
+
+  .cardHeader {
+    padding: 16px 16px 12px;
+  }
+
+  .cardHeader > div:first-child {
+    gap: 10px;
+  }
+
+  .cardIcon {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+  }
+
+  .summaryGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .summaryItem {
+    padding: 16px;
+    min-height: auto;
+  }
+
+  .summaryItem + .summaryItem {
+    border-left: 1px solid #ece7e2;
+  }
+
+  .summaryValue {
+    font-size: 22px;
+  }
+
+  .messageBlock {
+    padding: 16px;
+  }
+
+  .messageText {
+    padding: 16px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .footerNote {
+    padding: 0 16px 16px;
+  }
+}

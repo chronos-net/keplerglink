@@ -1,0 +1,92 @@
+/* CONTENEDOR GENERAL (crema arriba) */
+.rowsWrap {
+  display: flex;
+  flex-direction: column;
+  background: #faf8f6;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+/* CADA BLOQUE (blanco) */
+.rowItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 20px 24px;
+  border-top: 1px solid #e7ddd6;
+  background: #ffffff;
+}
+
+/* BLOQUE DE TEXTO */
+.rowTextBlock {
+  min-width: 0;
+  flex: 1;
+}
+
+/* TEXTO PRINCIPAL (MENSAJE) */
+.rowTitle {
+  color: #4b5563;
+  font-size: 13px; /* 🔥 aquí está lo que querías */
+  font-weight: 400; /* más tipo documento */
+  line-height: 1.9; /* más aire */
+  text-align: justify; /* 🔥 estilo formal */
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* BLOQUE DE MONTOS */
+.rowAmounts {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* CAJAS DE CANTIDADES */
+.amountValue {
+  min-width: 112px;
+  text-align: right;
+  color: #111827;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.4;
+  font-variant-numeric: tabular-nums;
+  padding: 10px 12px;
+  border: 1px solid #ece7e2;
+  border-radius: 12px;
+  background: #faf8f6;
+}
+
+/* ESTADO VACÍO (Conceptos) */
+.emptyState {
+  padding: 22px 24px;
+  color: #6b7280;
+  font-size: 13px;
+  line-height: 1.7;
+  background: #ffffff;
+  border-top: 1px solid #e7ddd6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 760px) {
+  .rowItem {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .rowAmounts {
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+
+  .amountValue {
+    min-width: 96px;
+  }
+
+  .emptyState {
+    padding: 16px;
+  }
+}

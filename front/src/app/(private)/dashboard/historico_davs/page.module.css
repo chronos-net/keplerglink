@@ -1,0 +1,80 @@
+.page {
+  display: grid;
+  gap: 5px;
+  padding: 16px;
+}
+
+.title {
+  composes: h1 from global;
+}
+
+
+.filterRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.helperText {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #475569;
+}
+
+.filterMain {
+  flex: 1;
+  min-width: 0;
+}
+
+.resetBtn {
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid #e7ecf7;
+  background: #fff;
+  font-weight: 800;
+  cursor: pointer;
+}
+.resetBtn:hover {
+  background: #f7f7f9;
+}
+.resetBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.loadingWrap {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  padding: 18px;
+  border: 1px solid #eef2f7;
+}
+
+.skeletonTitle,
+.skeletonLine {
+  display: block;
+  background: linear-gradient(90deg, #eee, #f6f6f6, #eee);
+  background-size: 200% 100%;
+  animation: shimmer 1.1s infinite;
+  border-radius: 10px;
+}
+
+.skeletonTitle {
+  width: 40%;
+  height: 18px;
+  margin: 6px 0 12px;
+}
+.skeletonLine {
+  width: 30%;
+  height: 12px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

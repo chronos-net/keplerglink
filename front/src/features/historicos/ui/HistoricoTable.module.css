@@ -1,0 +1,51 @@
+/* src/features/historicos/ui/HistoricoTable.module.css */
+
+.card {
+  margin-top: 16px;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+}
+
+.header {
+  padding: 14px 18px;
+  font-weight: 600;
+  font-size: 14px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.tableScroll {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.table thead tr {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.table th,
+.table td {
+  padding: 8px 14px;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.numeric {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.rowEven {
+  background: #ffffff;
+}
+
+.rowOdd {
+  background: #d5d5d52f;
+}

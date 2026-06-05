@@ -1,0 +1,59 @@
+/* src/features/historicos/ui/HistoricoSearchBar.module.css */
+
+.form {
+  margin-bottom: 18px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.inputWrapper {
+  position: relative;
+  flex: 1;
+}
+
+.icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 12px 10px 32px;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  font-size: 13px;
+  outline: none;
+  background: #ffffff;
+}
+
+.input:focus {
+  border-color: #b27a32;
+  box-shadow: 0 0 0 1px rgba(178, 122, 50, 0.15);
+}
+
+.button {
+  padding: 9px 20px;
+  border-radius: 999px;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(135deg, #5a0829 0%, #8c1c3f 50%, #b27a32 100%);
+  color: #ffffff;
+  transition: opacity 0.15s ease, transform 0.1s ease;
+}
+
+.button:hover:not(.buttonDisabled) {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+.buttonDisabled {
+  opacity: 0.7;
+  cursor: default;
+}

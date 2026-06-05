@@ -1,0 +1,93 @@
+﻿# =========================
+# Git internos respaldados
+# =========================
+back/.git_back_respaldo/
+front/.git_front_respaldo/
+
+# =========================
+# Backend Spring Boot / Maven
+# =========================
+back/target/
+back/*.log
+back/logs/
+
+# Archivos locales o sensibles backend
+back/.env
+back/.env.*
+back/application-local.properties
+back/application-prod.properties
+
+# Archivos DBA temporales generados
+back/_dba_created.txt
+back/_dba_failed.txt
+back/_dba_index_run.log
+back/_dba_skipped.txt
+back/_dba_tables.txt
+
+# =========================
+# Frontend Next.js / Node
+# =========================
+front/node_modules/
+front/.next/
+front/.unlighthouse/
+front/.vercel/
+front/out/
+front/dist/
+front/build/
+
+# Entornos frontend
+front/.env
+front/.env.*
+front/.env.local
+front/.env.development.local
+front/.env.production.local
+front/.env.test.local
+
+# Logs frontend
+front/npm-debug.log*
+front/yarn-debug.log*
+front/yarn-error.log*
+front/pnpm-debug.log*
+
+# =========================
+# IDE / sistema operativo
+# =========================
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+# Respaldos SQL / dumps
+# =========================
+respaldos_sql/
+*.sql
+*.dump
+*.backup
+*.bak
+
+# =========================
+# Parches locales temporales
+# =========================
+*.patch
+
+# =========================
+# Artefactos compilados / comprimidos
+# =========================
+*.jar
+*.war
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+
+# =========================
+# Temporales
+# =========================
+tmp/
+temp/
+*.tmp
+*.swp

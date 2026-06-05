@@ -1,0 +1,425 @@
+/* DescPlazas — reporte KEPLER con identidad GLINK (tokens globals.css) */
+
+.wrap {
+  background: var(--bg-canvas);
+  border-radius: var(--radius);
+  padding: 3px;
+  font-size: 12px;
+  color: var(--fg);
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  display: grid;
+  gap: 8px;
+}
+
+.reportToolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.reportTitleBlock {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 14px;
+  min-width: 0;
+}
+
+.reportTitle {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--fg);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.periodBadge {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--dim);
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: color-mix(in oklab, var(--accent) 8%, #fff);
+  border: 1px solid var(--border);
+}
+
+.pdfBtn {
+  height: 34px;
+  border: 0;
+  border-radius: var(--rb-radius, 12px);
+  background: #8b5c3b;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 0 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: opacity 0.2s ease, transform 0.04s ease;
+}
+
+.pdfBtn:hover:not(:disabled) {
+  background: #7a4f32;
+}
+
+.pdfBtn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.pdfBtn:not(:disabled):active {
+  transform: translateY(1px);
+}
+
+/* —— Encabezado empleado (3 columnas, estilo Comprobantes) —— */
+.headerGrid {
+  display: grid;
+  grid-template-columns: 1.15fr 1.45fr 0.9fr;
+  gap: 10px;
+  align-items: start;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.personCol {
+  padding-right: 8px;
+}
+
+.midCol {
+  padding: 0 10px;
+  border-left: 1px solid var(--divider);
+  border-right: 1px solid var(--divider);
+}
+
+.rightCol {
+  padding-left: 8px;
+}
+
+.personRow {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 14px;
+  background: color-mix(in oklab, var(--accent) 12%, #fff);
+  color: var(--accent);
+}
+
+.personMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.personName {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--fg);
+}
+
+.personIds {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--dim);
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--border);
+}
+
+.sectionTitle {
+  margin: 0 0 4px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--dim);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.metaGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 12px;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.metaLabel {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--dim);
+}
+
+.metaValue {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--fg);
+  font-variant-numeric: tabular-nums;
+  word-break: break-word;
+}
+
+/* —— Totales globales (barra resumen) —— */
+.totalsBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px 28px;
+  padding: 6px 4px 2px;
+  border-top: 1px solid var(--border-soft);
+}
+
+.totalItem {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.totalLabel {
+  font-size: 11px;
+  color: var(--dim);
+}
+
+.totalValue {
+  font-size: 13px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--fg);
+}
+
+.totalHighlight .totalValue {
+  color: var(--success);
+}
+
+/* —— Plazas —— */
+.plazas {
+  display: grid;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.plazaSection {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.plazaHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  padding: 5px 10px;
+  background: color-mix(in oklab, var(--accent) 6%, #fff);
+  border-bottom: 1px solid var(--border);
+}
+
+.plazaBadge {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  padding: 2px 8px;
+  border: 1px solid color-mix(in oklab, var(--accent) 25%, var(--border));
+  border-radius: 6px;
+  background: #fff;
+}
+
+.plazaHead .meta {
+  flex-direction: row;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.plazaHead .metaLabel::after {
+  content: ':';
+}
+
+.plazaHead .metaValue {
+  font-size: 11px;
+}
+
+/* —— Tablas percep / deduc lado a lado —— */
+.cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.conceptBox {
+  border-right: 1px solid var(--border);
+  min-width: 0;
+}
+
+.conceptBox:last-child {
+  border-right: none;
+}
+
+.conceptHead {
+  padding: 4px 10px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--fg);
+  background: var(--soft, #f6f7fb);
+  border-bottom: 1px solid var(--border);
+}
+
+.tableScroll {
+  max-height: 110px;
+  overflow: auto;
+  scrollbar-width: thin;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+}
+
+.thead,
+.tr {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  padding: 3px 10px;
+  font-size: 11px;
+}
+
+.thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  font-weight: 700;
+  color: var(--dim);
+  background: color-mix(in oklab, var(--card-bg) 90%, var(--border) 10%);
+  border-bottom: 1px solid var(--border);
+}
+
+.tr {
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.tr:nth-child(even) {
+  background: var(--rb-row-alt, #fafbfc);
+}
+
+.tdCode {
+  font-variant-numeric: tabular-nums;
+}
+
+.tdAmt {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.right {
+  text-align: right;
+}
+
+/* —— Totales por plaza —— */
+.plazaTotalsBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+  padding: 5px 10px;
+  border-top: 1px solid var(--border);
+  background: color-mix(in oklab, var(--accent) 4%, #fff);
+}
+
+.plazaTotalsBar .totalValue {
+  font-size: 12px;
+}
+
+.empty {
+  padding: 8px 10px;
+  font-size: 11px;
+  color: var(--dim);
+}
+
+.emptyState {
+  margin-top: 8px;
+  padding: 16px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  background: var(--card-bg);
+}
+
+.emptyTitle {
+  margin-bottom: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--fg);
+}
+
+.emptyText {
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--dim);
+}
+
+@media (max-width: 960px) {
+  .headerGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .midCol,
+  .rightCol {
+    border: none;
+    padding: 0;
+  }
+
+  .cols {
+    grid-template-columns: 1fr;
+  }
+
+  .conceptBox {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .plazaHead {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

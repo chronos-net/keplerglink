@@ -1,0 +1,41 @@
+.shell{
+  display:grid;
+  grid-template-columns: auto 1fr;
+  height:100dvh;
+  background:var(--bg-cream);
+
+  padding: var(--gap);
+  gap: var(--gap);
+  overflow:hidden;
+}
+
+.main{
+  display:flex;
+  min-height:0;
+  min-width:0;
+}
+
+.surface{
+  flex:1;
+  background:var(--surface);
+  border-radius:var(--radius);
+  box-shadow:0 10px 30px rgba(0,0,0,.06);
+  padding:20px;
+  overflow:auto;
+  scrollbar-gutter: stable;
+  min-height:0;
+  min-width:0;
+}
+
+@media (max-width: 720px){
+  .shell{
+    grid-template-columns: 76px 1fr;
+    padding:8px;
+    gap:8px;
+  }
+
+  .surface{
+    border-radius:14px;
+    padding:14px;
+  }
+}

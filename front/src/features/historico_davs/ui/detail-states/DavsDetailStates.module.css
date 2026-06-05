@@ -1,0 +1,19 @@
+.state {
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.error {
+  border: 1px solid #fecaca;
+  border-radius: 12px;
+  background: #fff1f2;
+  padding: 14px;
+  color: #9f1239;
+  font-size: 14px;
+  font-weight: 600;
+}

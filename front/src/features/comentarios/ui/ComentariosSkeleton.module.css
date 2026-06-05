@@ -1,0 +1,108 @@
+.wrap {
+  margin-top: 16px;
+}
+
+/* ===== shimmer animation ===== */
+
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #f1f2f6 25%,
+    #e5e7ef 37%,
+    #f1f2f6 63%
+  );
+  background-size: 800px 100%;
+  animation: shimmer 1.3s infinite linear;
+  border-radius: 10px;
+}
+
+/* ===== header ===== */
+
+.headerSkeleton {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  composes: skeleton;
+}
+
+.headerText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lineLg {
+  height: 16px;
+  width: 40%;
+  composes: skeleton;
+}
+
+.lineSm {
+  height: 12px;
+  width: 60%;
+  composes: skeleton;
+}
+
+/* ===== cards ===== */
+
+.cards {
+  display: grid;
+  gap: 16px;
+}
+
+.card {
+  border: 1px solid #eef0f6;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.badge {
+  height: 24px;
+  width: 120px;
+  margin-bottom: 14px;
+  composes: skeleton;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.box {
+  height: 48px;
+  composes: skeleton;
+}
+
+.comment {
+  height: 60px;
+  margin-bottom: 10px;
+  composes: skeleton;
+}
+
+.footer {
+  height: 14px;
+  width: 60%;
+  composes: skeleton;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

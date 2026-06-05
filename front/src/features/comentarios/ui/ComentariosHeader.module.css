@@ -1,0 +1,74 @@
+/* CONTENEDOR PRINCIPAL */
+.card {
+  width: 100%;
+  background: #fff;
+  border: 1px solid #eceef3;
+  margin-top: 12px;
+  margin-bottom: 18px;
+  padding: 18px 20px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+
+/* BLOQUE IZQUIERDO (avatar + nombre + datos) */
+.left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+  
+
+
+/* BLOQUE NOMBRE */
+.nameBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+/* NOMBRE DEL EMPLEADO */
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 8px;
+  color: #0f172a;
+}
+
+/* FILA HORIZONTAL */
+.dataRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-top: 1px;
+}
+
+/* ELEMENTO INDIVIDUAL: CURP, RFC, etc */
+.dataItem {
+  display: flex;
+  gap: 4px;
+  font-size: 12px;
+}
+
+/* LABEL */
+.label {
+  color: #8590a3;
+  font-weight: 600;
+}
+
+/* VALUE */
+.value {
+  color: #0e1726;
+  font-weight: 700;
+}
+
+/* BLOQUE DERECHO (vacío por ahora pero listo para usar) */
+.right {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  gap: 6px;
+}

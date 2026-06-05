@@ -1,0 +1,37 @@
+.wrap{
+  background: var(--rb-bg);
+  border: 1px dashed var(--rb-border);
+  border-radius: 14px;
+  padding: 28px 16px;
+  display: grid;
+  place-items: center;
+  margin-top: 10px;
+}
+
+.card{
+  text-align: center;
+  max-width: 520px;
+  padding: 6px 8px 10px;
+}
+
+.pic{
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 6px;
+  opacity: .95;
+}
+
+.title{
+  font-size: 18px;
+  line-height: 1.25;
+  margin: 6px 0 4px;
+  color: var(--rb-fg);
+  font-weight: 700;
+}
+
+.desc{
+  margin: 0;
+  color: var(--rb-dim);
+  font-size: 14px;
+}

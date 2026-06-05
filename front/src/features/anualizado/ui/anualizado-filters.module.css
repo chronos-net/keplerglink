@@ -1,0 +1,89 @@
+:root{
+  --ink:#0f172a;
+  --dim:#64748b;
+  --line:#eceef3;
+  --soft:#f6f7fb;
+  --accent:#9F2141;
+}
+
+/* Contenedor en línea, con wrap */
+.wrapper{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:12px;
+  padding:8px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+}
+
+/* Grupo con icono a la izquierda */
+.group{
+  position:relative;
+  display:flex;
+  align-items:center;
+}
+
+.icon{
+  position:absolute;
+  left:12px;
+  width:18px;
+  height:18px;
+  color:var(--dim);
+  pointer-events:none;
+}
+
+/* Inputs tipo “pill” */
+.input{
+  height:42px;
+  border:1px solid var(--line);
+  background:#fff;
+  color:var(--ink);
+  font-size:14px;
+  padding:0 12px 0 38px; /* espacio para el icono */
+  outline:none;
+  transition:border-color .15s, box-shadow .15s, background .15s;
+}
+
+.input::placeholder{ color:#9aa3b2; }
+
+/* Bordes redondeados tipo cápsula */
+.pill{ border-radius:9999px; }
+
+/* Tamaños */
+.wide{ min-width: min(72vw, 860px); }
+.sm{ width:140px; }
+
+/* Focus ring sutil */
+.input:focus{
+  border-color:#d7dbea;
+  box-shadow:0 0 0 3px #eef1f8;
+  
+}
+
+/* Botón “Filtrar” */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  height:42px;
+  padding:0 18px;
+  border:none;
+  border-radius:9999px;
+  background:var(--accent);
+  color:#fff;
+  font-weight:800;
+  cursor:pointer;
+  transition:transform .05s ease, opacity .2s ease, background .2s ease;
+}
+
+.btn:hover{ filter:brightness(.98); }
+.btn:active{ transform:translateY(1px); }
+.btn:disabled{ opacity:.7; cursor:not-allowed; }
+
+/* Responsive */
+@media (max-width: 860px){
+  .wide{ min-width: min(100%, 560px); }
+  .sm{ width:120px; }
+}

@@ -1,0 +1,27 @@
+.empty {
+  display: grid;
+  place-items: center;
+  gap: 8px;
+  min-height: 160px;
+  border: 1px dashed #e5e7eb;
+  border-radius: 5px;
+  background: #fff;
+  color: #98a2b3;
+  text-align: center;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+  padding: 16px;
+}
+
+.empty p {
+  margin: 0;
+  color: #667085;
+  font-weight: 800;
+}
+
+.empty span {
+  max-width: 320px;
+  color: #98a2b3;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+}

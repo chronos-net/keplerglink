@@ -1,0 +1,151 @@
+/* ===== contenedor ===== */
+.rb-wrap{
+  background:var(--rb-bg);
+  color:var(--rb-fg);
+  border:1px solid var(--rb-border);
+  border-radius:var(--rb-radius);
+  box-shadow:var(--rb-shadow);
+  padding:12px;
+  display:grid;
+  gap:12px;
+}
+
+/* ===== header ===== */
+.rb-header-card{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:12px;
+  border-bottom:1px solid var(--rb-border);
+  padding-bottom:10px;
+}
+
+.rb-person{ display:flex; align-items:center; gap:10px; }
+
+.rb-avatar{
+  width:42px; height:42px;
+  border-radius:50%;
+  display:grid; place-items:center;
+  font-weight:700;
+  background: color-mix(in oklab, var(--rb-accent) 12%, #fff);
+  color: var(--rb-accent);
+}
+
+.rb-person-meta{ min-width:0; }
+.rb-person-meta strong{ font-size:16px; line-height:1.25; }
+
+.dim{ color:var(--rb-dim); font-size:13px; }
+
+.mono{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+}
+
+.rb-grid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
+  gap:12px;
+}
+
+.lbl{
+  font-size:11px;
+  color:var(--rb-dim);
+  margin-bottom:4px;
+}
+
+/* ====== columnas de tablas ====== */
+.rb-columns{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.rb-col{ display: flex; }
+
+.rb-col > *{
+  flex: 1 1 auto;
+  padding-top: 0;
+  padding-bottom: 20px;
+}
+
+/* ====== Pie con Neto ==== */
+.rb-neto{
+  margin-top: 16px;
+  background: linear-gradient(180deg,#fff, #fafafa);
+  border: 1px solid var(--rb-border);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.rb-neto .row{
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1fr 1.4fr 0.9fr;
+  gap: 12px;
+  align-items: end;
+}
+
+.rb-neto .item{
+  padding: 4px 12px;
+  position: relative;
+  min-width: 0;
+}
+
+.rb-neto .item:not(:first-child)::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: var(--rb-border);
+  opacity: .6;
+}
+
+.right{ text-align:right; }
+
+.netoValue{
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--rb-success, #128A41);
+}
+
+/* ⭐ FILA FINAL DEL IMPORTE NETO */
+.netoRow{
+  background:#fff;
+}
+
+.netoRow .lbl{
+  color: var(--rb-fg);
+  font-weight:700;
+}
+
+/* ====== Responsivo ====== */
+@media (max-width: 1080px){
+  .rb-neto .row{
+    grid-template-columns: 1fr 1fr 1fr 1fr 0.8fr;
+  }
+}
+
+@media (max-width: 900px){
+  .rb-columns{ grid-template-columns: 1fr; }
+
+  .rb-neto .row{
+    grid-template-columns: 1fr 1fr;
+    row-gap: 10px;
+  }
+
+  .rb-neto .item:not(:first-child)::before{
+    display: none;
+  }
+
+  .right{
+    grid-column: 1 / -1;
+  }
+
+  .right .netoValue{ font-size: 18px; }
+}
+
+@media (max-width: 560px){
+  .rb-grid{ grid-template-columns: 1fr; }
+}

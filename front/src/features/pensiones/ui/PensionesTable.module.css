@@ -1,0 +1,87 @@
+.wrap{
+  background:#fff;
+  border:1px solid #e7e7ec;
+  border-radius:14px;
+  box-shadow:0 10px 26px rgba(0,0,0,.06);
+  padding:12px;
+}
+
+.title{
+  font-weight:700;
+  color:#0f172a;
+  margin-bottom:10px;
+}
+
+.tableWrap{
+  width:100%;
+  overflow:auto;
+  border-radius:12px;
+}
+
+/* tabla */
+.table{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  min-width: 720px;
+}
+
+/* sticky header */
+.table thead th{
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 1;
+}
+
+.table th{
+  text-align:left;
+  font-size:12px;
+  color:#6b7280;
+  font-weight:900;
+  padding:10px 10px;
+  border-bottom:1px solid #eef0f3;
+}
+
+/* filas */
+.table td{
+  padding:12px 10px;
+  border-bottom:1px solid #f2f4f7;
+  font-size:13px;
+  color:#0f172a;
+}
+
+.table tbody tr{
+  transition: background .12s ease;
+}
+
+.table tbody tr:hover{
+  background:#f8fafc;
+}
+
+/* zebra sutil (opcional) */
+.table tbody tr:nth-child(2n){
+  background: rgba(248, 250, 252, .4);
+}
+
+.primary{ font-weight:600; }
+.money{ font-weight:700; }
+
+.mono{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size:12px;
+  color:#334155;
+}
+
+/* badge */
+.badge{
+  display:inline-flex;
+  align-items:center;
+  padding:2px 10px;
+  border-radius:999px;
+  border:1px solid #e7e7ec;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  color:#0f172a;
+  font-size:12px;
+  font-weight:900;
+}

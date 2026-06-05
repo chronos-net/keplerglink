@@ -1,0 +1,56 @@
+/* src/app/(private)/dashboard/prestamos/prestamos-page.module.css */
+
+.page {
+  display: grid;
+  gap: 5px;
+  padding: 16px;
+}
+
+/* Título principal */
+.title {
+  composes: h1 from global;
+}
+
+.filterRow {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Caja de error (catálogos / API) */
+.errorBox {
+  margin: 4px 0 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #f5c2be;
+  background: #feeceb;
+  color: #b42318;
+  font-size: 0.9rem;
+}
+
+/* Mensajito de ayuda (por si lo usas después) */
+.hint {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* Ajuste para el EmptyState dentro de esta página (opcional) */
+.page :global(.empty-state-root) {
+  margin-top: 12px;
+}
+
+/* Responsive suave */
+@media (max-width: 900px) {
+  .filterRow,
+  .filterRowHasPrint {
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+  }
+
+  .printBtn {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0;
+  }
+}

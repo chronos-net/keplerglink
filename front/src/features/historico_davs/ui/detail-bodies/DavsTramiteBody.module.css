@@ -1,0 +1,483 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.card {
+  overflow: hidden;
+  border: 1px solid #e7e5e4;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid #efebe7;
+  background: #ffffff;
+}
+
+.cardIcon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  color: #6b7280;
+  flex-shrink: 0;
+}
+
+.cardTitle {
+  margin: 0;
+  color: #1f2937;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.cardSubtitle {
+  margin: 6px 0 0;
+  color: #7c7c7c;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+/* PERFIL */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 22px 24px 20px;
+}
+
+.profileMain {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  flex: 1;
+}
+
+.name {
+  margin: 0;
+  color: #1f2937;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+}
+
+.metaChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.metaChip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid #ece7e2;
+  border-radius: 12px;
+  background: #faf8f6;
+  color: #6b7280;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.metaBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 2px 0 0;
+  padding: 0;
+  background: transparent;
+}
+
+.metaBarItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid #ece7e2;
+  border-radius: 14px;
+  background: #faf8f6;
+  color: #6b7280;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.metaBarItem svg {
+  width: 14px;
+  height: 14px;
+  color: #7c7c7c;
+  flex-shrink: 0;
+}
+
+.metaBarDivider {
+  display: none;
+}
+
+/* RESUMEN SUPERIOR */
+.resumeStrip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid #efebe7;
+  background: #ffffff;
+}
+
+.resumeItem {
+  min-height: 110px;
+  padding: 18px 22px;
+  border-right: 1px solid #efebe7;
+  box-sizing: border-box;
+}
+
+.resumeItem:last-child {
+  border-right: none;
+}
+
+.resumeLabel {
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.resumeValueWrap {
+  margin-top: 10px;
+  line-height: 1.32;
+  word-break: break-word;
+  white-space: normal;
+  max-width: 220px;
+}
+
+.resumeValue {
+  margin-top: 8px;
+  color: #0f172a;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.28;
+}
+
+/* GRID DE INFORMACIÓN */
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid #efebe7;
+  background: #ffffff;
+}
+
+.infoItem {
+  min-height: 112px;
+  padding: 18px 30px;
+  border-bottom: 1px solid #efebe7;
+  box-sizing: border-box;
+}
+
+.infoItem:nth-child(odd) {
+  border-right: 1px solid #efebe7;
+}
+
+.infoLabel {
+  margin-bottom: 10px;
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.infoValue {
+  color: #334155;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.45;
+  word-break: break-word;
+}
+
+/* ANTIGÜEDAD MÁS TIPO TABLA */
+.antiguedadTable {
+  display: grid;
+  grid-template-columns: 1.15fr 1.3fr 1.3fr 0.8fr 0.8fr;
+  gap: 0;
+  border-top: 1px solid #efebe7;
+  background: #ffffff;
+}
+
+.antiguedadHead {
+  padding: 14px 18px 12px;
+  border-right: 1px solid #efebe7;
+  border-bottom: 1px solid #efebe7;
+  background: #fcfbfa;
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.2;
+  box-sizing: border-box;
+}
+
+.antiguedadHead:nth-child(5) {
+  border-right: none;
+}
+
+.antiguedadCell {
+  min-height: 72px;
+  padding: 14px 18px;
+  border-right: 1px solid #efebe7;
+  background: #ffffff;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.antiguedadCell:nth-child(10) {
+  border-right: none;
+}
+
+/* RESUMEN DE ANTIGÜEDAD */
+.antiguedadResume {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  margin: 0;
+  border-top: 1px solid #efebe7;
+  background: #ffffff;
+}
+
+.resumeRow {
+  min-height: 108px;
+  padding: 16px 20px;
+  border-right: 1px solid #efebe7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.resumeRow:last-child {
+  border-right: none;
+}
+
+.resumeRow span {
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.resumeRow strong {
+  color: #0f172a;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.15;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  min-height: 42px;
+}
+
+/* IMPORTES */
+.amountGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid #efebe7;
+  background: #ffffff;
+}
+
+.amountItem {
+  min-height: 118px;
+  padding: 16px 20px;
+  border-right: 1px solid #efebe7;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.amountItem:last-child {
+  border-right: none;
+}
+
+.amountLabel {
+  margin-bottom: 10px;
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.2;
+  min-height: 34px;
+  max-width: 190px;
+  display: flex;
+  align-items: flex-start;
+  text-wrap: balance;
+}
+
+.amountValue {
+  color: #0f172a;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  min-height: 24px;
+  display: flex;
+  align-items: flex-end;
+}
+
+/* AJUSTE GENERAL */
+.resumeItem,
+.infoItem,
+.antiguedadHead,
+.antiguedadCell,
+.resumeRow,
+.amountItem {
+  box-sizing: border-box;
+}
+
+/* RESPONSIVE */
+@media (max-width: 760px) {
+  .profile {
+    align-items: flex-start;
+    padding: 18px 16px 14px;
+  }
+
+  .name {
+    font-size: 16px;
+  }
+
+  .metaBar {
+    gap: 10px;
+  }
+
+  .metaBarItem {
+    padding: 9px 12px;
+    font-size: 12px;
+  }
+
+  .resumeStrip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .resumeItem {
+    min-height: auto;
+    padding: 16px;
+    border-right: 1px solid #efebe7;
+    border-bottom: 1px solid #efebe7;
+  }
+
+  .resumeItem:nth-child(2n) {
+    border-right: none;
+  }
+
+  .infoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .infoItem {
+    min-height: auto;
+    padding: 16px;
+  }
+
+  .infoItem:nth-child(odd) {
+    border-right: none;
+  }
+
+  .cardHeader {
+    padding: 16px;
+  }
+
+  .cardIcon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .cardTitle {
+    font-size: 16px;
+  }
+
+  .cardSubtitle {
+    font-size: 13px;
+  }
+
+  .antiguedadTable {
+    grid-template-columns: 1fr;
+  }
+
+  .antiguedadHead {
+    padding: 14px 16px 8px;
+    border-right: none;
+    border-bottom: none;
+    background: #ffffff;
+  }
+
+  .antiguedadCell {
+    min-height: auto;
+    padding: 0 16px 16px;
+    border-right: none;
+    border-bottom: 1px solid #efebe7;
+  }
+
+  .antiguedadResume {
+    grid-template-columns: 1fr;
+  }
+
+  .resumeRow {
+    min-height: auto;
+    padding: 16px;
+    border-right: none;
+    border-bottom: 1px solid #efebe7;
+  }
+
+  .resumeRow:last-child {
+    border-bottom: none;
+  }
+
+  .resumeRow strong {
+    font-size: 18px;
+    min-height: auto;
+  }
+
+  .amountGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .amountItem {
+    min-height: auto;
+    padding: 16px;
+    border-right: none;
+    border-bottom: 1px solid #efebe7;
+    gap: 10px;
+  }
+
+  .amountItem:last-child {
+    border-bottom: none;
+  }
+
+  .amountLabel {
+    max-width: 100%;
+    min-height: auto;
+  }
+
+  .amountValue {
+    font-size: 22px;
+    min-height: auto;
+  }
+}

@@ -1,0 +1,134 @@
+/* src/features/anualizado/ui/AnualizadoSkeleton.module.css */
+
+.wrapper {
+  margin-top: 18px;
+  padding: 18px 20px 22px;
+  border-radius: 14px;
+  border: 1px solid var(--rb-border, #e5e7eb);
+  background: var(--rb-card, #ffffff);
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.03);
+  animation: fadeIn 0.25s ease-out;
+}
+
+/* Chips superiores */
+.header {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.pill {
+  height: 22px;
+  border-radius: 999px;
+  background: #eceff3;
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+/* =============== */
+/*   TABLA GRID    */
+/* =============== */
+.table {
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #e6e8ee;
+  background: #f4f5f7;
+}
+
+/* 🔥 MATCH EXACTO: columna izquierda súper amplia como la tabla real */
+.row {
+  display: grid;
+  /* primera columna GIGANTE tal como en tu screenshot */
+  grid-template-columns:
+    minmax(320px, 340px)
+    repeat(12, minmax(65px, 1fr));
+}
+
+/* Celda */
+.cell {
+  height: 28px;
+  border-bottom: 1px solid rgba(160, 170, 186, 0.18);
+  border-right: 1px solid rgba(160, 170, 186, 0.18);
+  border-radius: 4px;
+
+  background: linear-gradient(
+    90deg,
+    #e2e4e9 0%,
+    #d6d8de 50%,
+    #e2e4e9 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.35s linear infinite;
+}
+
+/* Primera columna */
+.cellLeft {
+  border-radius: 6px;
+}
+
+/* Header/Footer más altos */
+.headerRow .cell,
+.footerRow .cell {
+  height: 34px;
+}
+
+/* Totales */
+.cellStrong {
+  background: linear-gradient(
+    90deg,
+    #d9dce2 0%,
+    #c9ccd4 50%,
+    #d9dce2 100%
+  );
+}
+
+/* Animaciones */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.55;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .row {
+    grid-template-columns: minmax(260px, 300px) repeat(6, minmax(70px, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .wrapper {
+    padding: 12px;
+  }
+
+  .row {
+    grid-template-columns: minmax(200px, 260px) repeat(4, minmax(60px, 1fr));
+  }
+}

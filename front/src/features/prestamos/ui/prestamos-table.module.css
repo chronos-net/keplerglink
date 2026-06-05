@@ -1,0 +1,78 @@
+.card {
+  margin-top: 12px;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+}
+
+.title {
+  padding: 14px 18px;
+  font-weight: 700;
+  font-size: 20px;
+  border-bottom: 1px solid #e5e7eb;
+  color: #111827;
+  line-height: 1.2;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  color: #111827;
+}
+
+.table thead tr {
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.table th,
+.table td {
+  padding: 9px 14px;
+  white-space: nowrap;
+}
+
+.table th {
+  font-weight: 700;
+  font-size: 14px;
+  text-align: left;
+  color: #4b5563;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.table td {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.table tbody tr:nth-child(even) {
+  background: #f6f6f8;
+}
+
+.amount {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.saldo {
+  font-size: 12px;
+  color: #374151;
+}
+
+.center {
+  text-align: center;
+}
+
+.emptyCell {
+  text-align: center;
+  padding: 14px;
+  font-size: 12px;
+  color: #6b7280;
+}

@@ -1,0 +1,20 @@
+.page {
+  display: grid;
+  gap: 5px;
+  padding: 16px;
+}
+
+.h1{
+  composes: h1 from global;
+}
+
+/* alerta tipo “catálogos” (igual a tu inline) */
+.catalogError {
+  margin: 10px 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #f5c2be;
+  background: #feeceb;
+  color: #b42318;
+  font-size: 0.92rem;
+}
