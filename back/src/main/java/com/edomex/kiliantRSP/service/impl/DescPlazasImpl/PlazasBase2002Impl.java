@@ -43,11 +43,19 @@ public class PlazasBase2002Impl implements PlazasBase2002Service {
                   ON b.periodo = a.periodo
                  AND (
                       b.puesto = a.puesto
-                      OR b.puesto = LEFT(a.puesto, 7)
+                      OR (
+                          b.puesto = LEFT(a.puesto, 7)
+                          AND NOT EXISTS (
+                              SELECT 1
+                              FROM %s b_exact
+                              WHERE b_exact.periodo = a.periodo
+                                AND b_exact.puesto = a.puesto
+                          )
+                      )
                  )
                 WHERE a.neyemp = ?
                   AND a.periodo = ?;
-                """, tablePrimaria, tableSecundaria);
+                """, tablePrimaria, tableSecundaria, tableSecundaria);
 
 
         try{
