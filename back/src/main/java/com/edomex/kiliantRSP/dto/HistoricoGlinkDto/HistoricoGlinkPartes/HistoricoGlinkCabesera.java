@@ -13,6 +13,7 @@ public record HistoricoGlinkCabesera(
         Integer nh,
         String catego,
         String perdeocupacion,
+        String perdeocupacionFormato,
         String desc_puesto
 ) {
 }

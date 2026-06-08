@@ -10,9 +10,23 @@ import org.springframework.stereotype.Repository;
 public interface HistoricoGlinkCabeseraRepository extends JpaRepository<Vista_Cabecera_Historico, String> {
 
     @Query(value = """
-            SELECT a.*, b.puesto
+            SELECT
+                a.cvesp,
+                a.rfc,
+                a.nombre,
+                a.sitsp,
+                a.curp,
+                a.dep,
+                a.uresp,
+                a.npza,
+                a.cct,
+                a.nh,
+                a.catego,
+                a.perdeocupacion,
+                b.puesto AS puesto
             FROM vista_cabecera_historico a
-            LEFT JOIN tabla_pzaemp b ON a.cvesp = b.cvesp
+            LEFT JOIN tabla_pzaemp b
+                ON a.cvesp = b.cvesp
             WHERE a.cvesp = :neyemp
             """, nativeQuery = true)
     Vista_Cabecera_Historico buscarCabecera(@Param("neyemp") String neyemp);

@@ -47,5 +47,7 @@ public class Vista_Cabecera_Historico {
     @Column(name = "perdeocupacion")
     private String perdeocupacion;
 
+    @Column(name = "puesto")
+    private String puesto;
 
 }
