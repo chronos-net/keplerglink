@@ -91,3 +91,8 @@ tmp/
 temp/
 *.tmp
 *.swp
+
+
+/front/src/lib/
+front/.env*
+front/next.config.ts
