@@ -96,3 +96,4 @@ temp/
 /front/src/lib/
 front/.env*
 front/next.config.ts
+front/http.config.ts
