@@ -20,11 +20,25 @@ public interface VistaHistoricoCabeseraMapper {
     @Mapping(target = "nh", source = "nh")
     @Mapping(target = "catego", source = "catego")
     @Mapping(target = "perdeocupacion", source = "perdeocupacion")
-    @Mapping(target = "desc_puesto", source = "puesto")
+    @Mapping(target = "desc_puesto", expression = "java(FechaPeriodoHelper.limpiarDescPuesto(entidad.getPuesto()))")
     @Mapping(target = "perdeocupacionFormato", expression = "java(FechaPeriodoHelper.formatearPeriodo(entidad.getPerdeocupacion()))")
     HistoricoGlinkCabesera toDto(Vista_Cabecera_Historico entidad);
 
     class FechaPeriodoHelper {
+
+        static String limpiarDescPuesto(String puesto) {
+            if (puesto == null) {
+                return null;
+            }
+
+            // Quita espacios finales primero
+            String limpio = puesto.trim();
+
+            // Si termina con un bloque de puros ceros separado por espacios, lo elimina
+            limpio = limpio.replaceAll("\\s+0+$", "");
+
+            return limpio.trim();
+        }
 
         static String formatearPeriodo(String periodo) {
             if (periodo == null) {
