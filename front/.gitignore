@@ -50,6 +50,6 @@ desktop.ini
 # Important:
 # Do NOT ignore src/lib or next-env.d.ts
 # =========================
-
 /src/lib/
 .env*
+next.config.ts
