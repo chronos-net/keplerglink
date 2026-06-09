@@ -48,9 +48,8 @@ desktop.ini
 
 # =========================
 # Important:
-# Do NOT ignore src/lib or next-env.d.ts
+# Do NOT ignore all src/lib or next-env.d.ts
 # =========================
-/src/lib/
 .env*
 /next.config.ts
-/http.config.ts
+/src/lib/http/http.config.ts

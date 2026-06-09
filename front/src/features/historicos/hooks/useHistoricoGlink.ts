@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import axios from 'axios';
 import type { HistoricoRequest, HistoricoResponse } from '../types/historico.types';
 import { postHistoricoGlink } from '../services/historico.service';
+import { capitalizeFirstLetter } from '../utils/format';
 
 const isAbortLike = (err: unknown) => {
   if (typeof err === 'object' && err) {
@@ -78,7 +79,16 @@ export function useHistoricoGlink() {
     }));
 
     try {
-      const data = await postHistoricoGlink(payload, { signal: ac.signal });
+      const response = await postHistoricoGlink(payload, { signal: ac.signal });
+      const data: HistoricoResponse = {
+        ...response,
+        header: {
+          ...response.header,
+          perdeocupacionFormato: capitalizeFirstLetter(
+            response.header.perdeocupacionFormato
+          ),
+        },
+      };
 
       if (activeKeyRef.current !== key) return null;
 

@@ -272,6 +272,11 @@
   display: none;
 }
 
+.compactItemPeriod {
+  min-width: 360px;
+  max-width: min(560px, 70vw);
+}
+
 .compactLabel {
   display: block;
   margin-bottom: 5px;
@@ -291,6 +296,12 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.compactValuePeriod {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
 }
 
 @media (max-width: 1200px) {
@@ -363,5 +374,9 @@
 
   .bottomGrid {
     grid-template-columns: 1fr;
+  }
+
+  .compactItemPeriod {
+    min-width: min(360px, calc(100vw - 64px));
   }
 }

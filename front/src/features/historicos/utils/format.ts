@@ -7,3 +7,12 @@ export function formatCurrencyMXN(value?: number): string {
     minimumFractionDigits: 2,
   });
 }
+
+
+export function capitalizeFirstLetter(value?: string | null): string {
+  const text = (value ?? '').trim();
+
+  if (!text) return '';
+
+  return text.charAt(0).toLocaleUpperCase('es-MX') + text.slice(1);
+}

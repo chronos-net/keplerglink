@@ -31,6 +31,7 @@ type RawCabeceraHistorico = {
   categ?: unknown;
 
   perdeocupacion?: unknown;
+  perdeocupacionFormato?: unknown;
   desc_puesto?: unknown;
 };
 
@@ -75,6 +76,7 @@ export type HistoricoHeader = {
   horas?: string | null;
   categoria?: string | null;
   periodoOcupacion?: string | null;
+  perdeocupacionFormato?: string | null;
   puesto?: string | null;
 };
 
@@ -141,6 +143,7 @@ export function normalizeHistorico(raw: RawHistoricoResponse): HistoricoResponse
     // ✅ FIX: catego vs categ
     categoria: toNullableString(cab.catego ?? cab.categ),
     periodoOcupacion: toNullableString(cab.perdeocupacion),
+    perdeocupacionFormato: toNullableString(cab.perdeocupacionFormato),
 
     puesto: toNullableString(cab.desc_puesto),
   };

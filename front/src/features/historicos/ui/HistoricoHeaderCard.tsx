@@ -22,8 +22,8 @@ export default function HistoricoHeaderCard({ header, totalPercepciones }: Props
     ['Plaza', header.plaza],
     ['CCT', header.cct],
     ['Horas', header.horas],
-    ['Periodo ocupación', header.periodoOcupacion],
     ['Puesto', header.puesto],
+    ['Formato Periodo', header.perdeocupacionFormato]
   ] as const;
 
   return (
@@ -66,9 +66,21 @@ export default function HistoricoHeaderCard({ header, totalPercepciones }: Props
       <div className={s.compactStrip}>
         <div className={s.compactRail}>
           {compactItems.map(([label, value]) => (
-            <div className={s.compactItem} key={label}>
+            <div
+              className={`${s.compactItem} ${
+                label === 'Formato Periodo' ? s.compactItemPeriod : ''
+              }`}
+              key={label}
+            >
               <span className={s.compactLabel}>{label}</span>
-              <strong className={s.compactValue}>{value || '-'}</strong>
+              <strong
+                className={`${s.compactValue} ${
+                  label === 'Formato Periodo' ? s.compactValuePeriod : ''
+                }`}
+                title={value || undefined}
+              >
+                {value || '-'}
+              </strong>
             </div>
           ))}
         </div>
