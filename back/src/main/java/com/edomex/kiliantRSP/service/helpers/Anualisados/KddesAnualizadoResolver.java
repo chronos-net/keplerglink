@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
+import java.util.Collections;
 import java.util.List;
 
 @Component
@@ -14,12 +15,18 @@ public class KddesAnualizadoResolver {
 
     public record KddesFuente(String tabla, String columnaSecuencia) {}
 
+    public record UltimoHValido(String periodo, Integer secuenciaPlaza) {}
+
+    /**
+     * @deprecated Usar {@link #obtenerTablaKddes(int)} para cabecera/cálculo según reglas OTSO.
+     */
+    @Deprecated
     public KddesFuente resolver(String neyemp, int anio) {
         if (anio > 2010) {
             return new KddesFuente("kddesx" + anio, "sec_plaza");
         }
 
-        String tablaKddes = "kddes" + anio;
+        String tablaKddes = obtenerTablaKddes(anio);
         if (contarRegistros(tablaKddes, neyemp) > 0) {
             return new KddesFuente(tablaKddes, "secuencia_plaza");
         }
@@ -32,41 +39,90 @@ public class KddesAnualizadoResolver {
         return new KddesFuente(tablaKddes, "secuencia_plaza");
     }
 
-    /**
-     * Secuencias de plaza válidas para anualizado: solo tipo_nomina ordinaria (0 o 1).
-     * kddes usa secuencia_plaza; kddesx usa sec_plaza (equivalente en vistas).
-     */
-    public List<String> obtenerSecuenciasValidas(String neyemp, int anio, String periodo) {
-        var fuente = resolver(neyemp, anio);
+    public String obtenerTablaKddes(int anio) {
+        return "kddes" + anio;
+    }
 
+    /**
+     * Último registro válido de KDDES (equivalente OTSO: VIEW(H) con H3 &lt; 30).
+     */
+    public UltimoHValido obtenerUltimoHValido(String neyemp, int anio, String periodo) {
+        if (!tablaKddesDisponible(anio)) {
+            return null;
+        }
+
+        String tabla = obtenerTablaKddes(anio);
         String sql = """
-                SELECT DISTINCT %s::text AS secuencia
+                SELECT periodo,
+                       CAST(secuencia_plaza AS INTEGER) AS secuencia_plaza
                 FROM %s
                 WHERE neyemp = ?
                   AND periodo = ?
+                  AND CAST(secuencia_plaza AS INTEGER) < 30
                   AND TRIM(tipo_nomina::text) IN ('0', '1')
-                """.formatted(fuente.columnaSecuencia(), fuente.tabla());
+                ORDER BY CAST(secuencia_plaza AS INTEGER) DESC,
+                         cve_empleado DESC NULLS LAST
+                LIMIT 1
+                """.formatted(tabla);
+
+        List<UltimoHValido> result = jdbcTemplate.query(
+                sql,
+                (rs, rowNum) -> new UltimoHValido(
+                        rs.getString("periodo"),
+                        rs.getInt("secuencia_plaza")
+                ),
+                neyemp,
+                periodo
+        );
+
+        return result.isEmpty() ? null : result.get(0);
+    }
+
+    /**
+     * Secuencias de plaza válidas para cálculo: siempre desde KDDES, tipo_nomina ordinaria (0 o 1).
+     */
+    public List<String> obtenerSecuenciasValidas(String neyemp, int anio, String periodo) {
+        if (!tablaKddesDisponible(anio)) {
+            return Collections.emptyList();
+        }
+
+        String tabla = obtenerTablaKddes(anio);
+        String sql = """
+                SELECT secuencia_plaza::text AS secuencia
+                FROM %s
+                WHERE neyemp = ?
+                  AND periodo = ?
+                  AND CAST(secuencia_plaza AS INTEGER) < 30
+                  AND TRIM(tipo_nomina::text) IN ('0', '1')
+                GROUP BY secuencia_plaza
+                ORDER BY CAST(secuencia_plaza AS INTEGER)
+                """.formatted(tabla);
 
         return jdbcTemplate.queryForList(sql, String.class, neyemp, periodo);
     }
 
     /**
-     * CTE reutilizable: plazas con tipo_nomina ordinaria (0 o 1) por periodo y secuencia.
+     * CTE reutilizable: plazas válidas desde KDDES por periodo y secuencia.
      * Requiere un parámetro neyemp en la consulta que la incorpore.
      */
     public String ctePlazasValidas(String neyemp, int anio) {
-        var fuente = resolver(neyemp, anio);
+        String tabla = obtenerTablaKddes(anio);
 
         return """
                 plazas_validas AS (
                     SELECT DISTINCT
                         periodo::text AS periodo,
-                        %s::text AS secuencia
+                        secuencia_plaza::text AS secuencia
                     FROM %s
                     WHERE neyemp = ?
+                      AND CAST(secuencia_plaza AS INTEGER) < 30
                       AND TRIM(tipo_nomina::text) IN ('0', '1')
                 )
-                """.formatted(fuente.columnaSecuencia(), fuente.tabla());
+                """.formatted(tabla);
+    }
+
+    private boolean tablaKddesDisponible(int anio) {
+        return tablaExiste(obtenerTablaKddes(anio));
     }
 
     private int contarRegistros(String tabla, String neyemp) {
